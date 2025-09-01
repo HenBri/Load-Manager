@@ -8,7 +8,7 @@ import jakarta.persistence.Persistence;
 public class BorrowerService {
     private EntityManagerFactory emf ;
     public BorrowerService(){
-        emf = Persistence.createEntityManagerFactory("ProfesoresPU");
+        emf = Persistence.createEntityManagerFactory("profesoresPU");
     }
         public void saveBorrower(Borrower borrower){
             EntityManager em =emf.createEntityManager();

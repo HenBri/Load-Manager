@@ -1,9 +1,6 @@
 package com.libreria.libreria.model.Entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,6 +12,7 @@ import java.util.Date;
 @Setter
 public class Borrower {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="borrower_id")
     private Long id;
     @Column(name= "borrower_nombre")
@@ -29,8 +27,14 @@ public class Borrower {
     private Date fechaUpdate;
     @Column(name = "borrower_state")
     private boolean state;
-    @Column(name = "borrower_age")
-    private int age;
+
+    @PrePersist
+    public void onprePersist(){
+
+        this.state=true;
+        this.fechaCreate=new Date();
+
+    }
 
 
 }
