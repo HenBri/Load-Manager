@@ -7,7 +7,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1 " fx:controller="com.libreria.libreria.controller.BorrowerController">
    <children>
-      <Label layoutX="219.0" layoutY="35.0" prefHeight="38.0" prefWidth="133.0" text="Registrar Deficiario" />
+      <Label fx:id="lblTitle" layoutX="219.0" layoutY="35.0" prefHeight="38.0" prefWidth="133.0" text="Registrar Deficiario" />
       <TextField fx:id="textFieldNombre" layoutX="42.0" layoutY="102.0" prefHeight="38.0" prefWidth="204.0" />
       <TextField fx:id="textFieldApellido" layoutX="42.0" layoutY="182.0" prefHeight="38.0" prefWidth="204.0" />
       <TextField fx:id="textFieldTurno" layoutX="42.0" layoutY="260.0" prefHeight="38.0" prefWidth="204.0" />
