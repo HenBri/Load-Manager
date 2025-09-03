@@ -2,9 +2,12 @@ package com.libreria.libreria;
 
 import com.libreria.libreria.controller.BorrowerController;
 import javafx.application.Application;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import org.hibernate.annotations.Fetch;
 
 import java.io.IOException;
 
@@ -17,9 +20,6 @@ public class HelloApplication extends Application {
 
         stage.setScene(scene);
         stage.show();
-
-        //BorrowerController controller = fxmlLoader.getController();
-        //controller.setModo("otro");
     }
 
     public static void main(String[] args) {
