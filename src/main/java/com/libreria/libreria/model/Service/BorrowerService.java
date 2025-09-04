@@ -43,7 +43,7 @@ public class BorrowerService {
         public List<Borrower> getAllBorrower(){
             EntityManager em = emf.createEntityManager();
             try{
-                 return em.createQuery("SELECT u FROM borrower_Table", Borrower.class)
+                 return em.createQuery("SELECT u FROM borrower_Table u", Borrower.class)
                          .getResultList();
             } catch (IllegalArgumentException e) {
                 throw new RuntimeException("Eror, el metodo get all no se completo:"+e);

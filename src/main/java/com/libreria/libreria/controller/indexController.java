@@ -14,6 +14,8 @@ public class indexController {
 
             Stage nuevaVentana = new Stage();
             nuevaVentana.setTitle("Crear Borrower");
+            BorrowerController borrowerController = fxmlLoader.getController();
+            borrowerController.setModo("crear");
             nuevaVentana.setScene(scene);
             nuevaVentana.show();
 
