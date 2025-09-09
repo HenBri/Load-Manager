@@ -77,7 +77,7 @@ public class AccountService {
             em.getTransaction().begin();
 
             Account account = getById(idAccount);
-            em.merge()
+            em.merge(account);
         }catch (IllegalArgumentException e){
             throw new RuntimeException("Error al momento de eliminar Cuenta: "+e);
 
