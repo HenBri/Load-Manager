@@ -70,4 +70,20 @@ public class AccountService {
         }
 
     }
+
+    public void deleteAccount(Long idAccount){
+        EntityManager em = emf.createEntityManager();
+        try{
+            em.getTransaction().begin();
+
+            Account account = getById(idAccount);
+            em.merge()
+        }catch (IllegalArgumentException e){
+            throw new RuntimeException("Error al momento de eliminar Cuenta: "+e);
+
+        }finally {
+            em.close();
+
+        }
+    }
 }

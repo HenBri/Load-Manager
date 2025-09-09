@@ -73,4 +73,21 @@ public class BorrowerService {
                 emf.close();
             }
         }
+        public void deleteBorrower(Long idBorrowerDelete){
+            EntityManager em = emf.createEntityManager();
+            try{
+               em.getTransaction().begin();
+
+               Borrower borrower = getById(idBorrowerDelete);
+
+               borrower.setState(false);
+               em.merge(borrower);
+               em.getTransaction().commit();
+
+            }catch (IllegalArgumentException e){
+                throw  new RuntimeException("Error al momento de eliminar");
+            }finally {
+                em.close();
+            }
+        }
 }

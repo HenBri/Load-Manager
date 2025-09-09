@@ -22,12 +22,15 @@ public class Account {
     private Integer credit;
     @Column(name = "date_create_account")
     private Date dateCreate;
+    @Column(name = "state_account")
+    private boolean state;
 
     @PrePersist
     public void onPersist(){
         this.balance=0;
         this.credit=0;
         this.dateCreate = new Date();
+        this.state = true;
     }
 
 }
