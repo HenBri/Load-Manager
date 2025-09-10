@@ -75,8 +75,8 @@ public class AccountService {
         EntityManager em = emf.createEntityManager();
         try{
             em.getTransaction().begin();
-
             Account account = getById(idAccount);
+            account.setState(false);
             em.merge(account);
         }catch (IllegalArgumentException e){
             throw new RuntimeException("Error al momento de eliminar Cuenta: "+e);

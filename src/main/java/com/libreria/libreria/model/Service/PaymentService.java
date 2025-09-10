@@ -45,7 +45,7 @@ public class PaymentService {
                     , Payment.class).getResultList();
 
         }catch (IllegalArgumentException e){
-            throw  new RuntimeException("Error al obtener todos"+e);
+               throw  new RuntimeException("Error al obtener todos"+e);
         }finally {
             em.close();
         }
