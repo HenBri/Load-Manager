@@ -19,11 +19,17 @@ public class Debt {
     @Column(name = "create_date_debt")
     private Date date;
 
-    @Column(name = "detail_debt")
-    private String detail;
+        @Column(name = "amount_leaves_debt")
+        private Integer leaves;
 
-    @Column(name = "amount_debt")
-    private Integer amount;
+        @Column(name = "additional_debt")
+        private Integer additional;
+
+        @Column(name = "detail_debt")
+        private String detail;
+
+        @Column(name = "amount_debt")
+        private Integer amount;
 
     @Column(name = "state_debt")
     private Boolean state;

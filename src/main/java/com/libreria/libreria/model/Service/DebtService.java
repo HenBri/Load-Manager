@@ -61,6 +61,8 @@ public class DebtService {
 
             debtUpdate.setAmount(debt.getAmount());
             debtUpdate.setDetail(debt.getDetail());
+            debtUpdate.setLeaves(debt.getLeaves());
+            debtUpdate.setAdditional(debt.getAdditional());
 
             entityManager.merge(debtUpdate);
 
