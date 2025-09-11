@@ -17,6 +17,7 @@ public class Debt {
     private Long id;
 
     @Column(name = "create_date_debt")
+    @Temporal(TemporalType.DATE)
     private Date date;
 
         @Column(name = "amount_leaves_debt")

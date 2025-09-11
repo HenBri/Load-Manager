@@ -18,10 +18,14 @@ public class Account {
 
     @Column(name = "balance_account")
     private Integer balance;
+
     @Column(name="credit_account")
     private Integer credit;
+
     @Column(name = "date_create_account")
+    @Temporal(TemporalType.DATE)
     private Date dateCreate;
+
     @Column(name = "state_account")
     private boolean state;
 

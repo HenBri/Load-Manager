@@ -18,6 +18,7 @@ public class Payment {
     private Long id;
 
     @Column(name = "date_create_payment")
+    @Temporal(TemporalType.DATE)
     private Date date;
 
     @Column(name = "amount_payment")

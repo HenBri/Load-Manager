@@ -15,16 +15,24 @@ public class Borrower {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="borrower_id")
     private Long id;
+
     @Column(name= "borrower_nombre")
     private String nombre;
+
     @Column(name = "borrower_apellido")
     private String apellido;
+
     @Column(name="borrower_turno")
     private String turno;
+
     @Column(name = "date_create")
-    private Date fechaCreate;
-    @Column(name="fecha_update")
-    private Date fechaUpdate;
+    @Temporal(TemporalType.DATE)
+    private Date dateCreate;
+
+    @Column(name="date_update")
+    @Temporal(TemporalType.DATE)
+    private Date dateUpdate;
+
     @Column(name = "borrower_state")
     private boolean state;
 
@@ -32,7 +40,7 @@ public class Borrower {
     public void onprePersist(){
 
         this.state=true;
-        this.fechaCreate=new Date();
+        this.dateCreate =new Date();
 
     }
 
