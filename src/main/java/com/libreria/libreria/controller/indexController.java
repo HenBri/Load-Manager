@@ -28,7 +28,7 @@ public class indexController {
     @FXML
     public void loadNewDebt(){
         try{
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource());
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("profesoresPU"));
 
         } catch (Exception e) {
             e.printStackTrace();
