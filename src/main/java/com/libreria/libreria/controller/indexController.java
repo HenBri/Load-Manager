@@ -25,4 +25,14 @@ public class indexController {
 
         }
     }
+    @FXML
+    public void loadNewDebt(){
+        try{
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource());
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RuntimeException("Error al abrir ventana de deudores: "+e);
+        }
+    }
 }
