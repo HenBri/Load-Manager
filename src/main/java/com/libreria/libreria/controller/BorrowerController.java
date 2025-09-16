@@ -2,40 +2,25 @@ package com.libreria.libreria.controller;
 
 import com.libreria.libreria.model.Entity.Borrower;
 import com.libreria.libreria.model.Service.BorrowerService;
+import javafx.beans.Observable;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.ListView;
+import javafx.stage.Stage;
+
+import java.util.List;
 
 public class BorrowerController {
-    private BorrowerService borrowerService =new BorrowerService();
 
-    @FXML private TextField textFieldNombre;
-    @FXML private TextField textFieldApellido;
-    @FXML private TextField textFieldTurno;
-    @FXML private Label lblTitle;
-
-    public void setModo(String modo){
-        if(modo.equals("crear")){
-            lblTitle.setText("Crear Usuario");
-        }else{
-            lblTitle.setText("Update un Usuario");
-        }
-    }
-
+    @FXML ListView<Borrower> listView;
+    private BorrowerService borrowerService = new BorrowerService();
 
     @FXML
-    private void createBorrower(){
-        Borrower borrower=new Borrower();
-        borrower.setNombre(textFieldNombre.getText());
-        borrower.setApellido(textFieldApellido.getText());
-        borrower.setTurno(textFieldTurno.getText());
-
-        borrowerService.saveBorrower(borrower);
-
-        textFieldNombre.clear();
-        textFieldApellido.clear();
-        textFieldTurno.clear();
+    private void initialize(){
+        List<Borrower> borrowers=borrowerService.getAllBorrower();
+        System.out.println("Borrowers desde BDD: " + borrowers);
+        ObservableList<Borrower> borrowerObservableList= FXCollections.observableList(borrowers);
+        listView.setItems(borrowerObservableList);
     }
-
-
 }

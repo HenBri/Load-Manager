@@ -9,19 +9,19 @@ public class indexController {
     @FXML
     public void loadNewBorrower(){
         try{
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/libreria/libreria/createBorrower.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/libreria/libreria/Borrower.fxml"));
             Scene scene = new Scene(fxmlLoader.load(),500,450);
 
             Stage nuevaVentana = new Stage();
-            nuevaVentana.setTitle("Crear Borrower");
-            BorrowerController borrowerController = fxmlLoader.getController();
-            borrowerController.setModo("crear");
+            nuevaVentana.setTitle("Borrower");
+            // AddBorrowerController addBorrowerController = fxmlLoader.getController();
+            // addBorrowerController.setModo("crear");
             nuevaVentana.setScene(scene);
             nuevaVentana.show();
 
         }catch (Exception e){
             e.printStackTrace();
-            throw new RuntimeException("Error al abrir la ventana de creacion de Borrower"+e.getMessage());
+            throw new RuntimeException("Error al abrir la ventana de Borrower"+e.getMessage());
 
         }
     }

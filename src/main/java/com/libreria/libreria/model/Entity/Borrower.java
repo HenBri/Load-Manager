@@ -43,6 +43,10 @@ public class Borrower {
         this.dateCreate =new Date();
 
     }
+    @Override
+    public String toString() {
+        return nombre;
+    }
 
 
 }
