@@ -10,7 +10,7 @@ import java.util.List;
 public class DebtService {
     private EntityManagerFactory emf;
     public DebtService(){
-        emf = Persistence.createEntityManagerFactory("profesoresUP");
+        emf = Persistence.createEntityManagerFactory("profesoresPU");
     }
 
     public void saveDebt(Debt debt){

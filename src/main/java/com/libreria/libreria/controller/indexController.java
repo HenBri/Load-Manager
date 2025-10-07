@@ -9,13 +9,14 @@ public class indexController {
     @FXML
     public void loadNewBorrower(){
         try{
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/libreria/libreria/createBorrower.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/libreria/libreria/debt.fxml"));
             Scene scene = new Scene(fxmlLoader.load(),500,450);
 
             Stage nuevaVentana = new Stage();
             nuevaVentana.setTitle("Crear Borrower");
-            BorrowerController borrowerController = fxmlLoader.getController();
-            borrowerController.setModo("crear");
+           // BorrowerController borrowerController = fxmlLoader.getController();
+            DebpController debpController = fxmlLoader.getController();
+            //borrowerController.setModo("crear");
             nuevaVentana.setScene(scene);
             nuevaVentana.show();
 

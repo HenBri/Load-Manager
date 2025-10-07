@@ -56,7 +56,6 @@ public class BorrowerService {
             EntityManager em = emf.createEntityManager();
             try{
                 em.getTransaction().begin();
-
                 Borrower borrower = getById(id);
 
                 borrower.setNombre(updateBorrower.getNombre());
